@@ -17,12 +17,10 @@ public class DisplayActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
-
         display_name = findViewById(R.id.id_display_name);
         display_email = findViewById(R.id.id_display_email);
         display_number = findViewById(R.id.id_display_number);
         display_type = findViewById(R.id.id_display_type);
-
         helper = new DBHelper(this,null,null,0);
         Contact contact = helper.getData();
         if(contact!=null){
@@ -34,6 +32,8 @@ public class DisplayActivity extends AppCompatActivity {
         else{
             Toast.makeText(this, "No contacts are saved", Toast.LENGTH_SHORT).show();
         }
+
+        
     }
 
     public void createContact(View view) {
